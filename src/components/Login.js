@@ -91,15 +91,16 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute w-screen">
+      <div className="absolute">
         <img
+        className="h-screen w-screen "
           src="https://assets.nflxext.com/ffe/siteui/vlv3/c31c3123-3df7-4359-8b8c-475bd2d9925d/15feb590-3d73-45e9-9e4a-2eb334c83921/IN-en-20231225-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="img"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-4/12 absolute text-white bg-black p-12 my-32 mx-auto right-0 left-0 opacity-85 rounded-md "
+        className=" xl:w-4/12 lg:w-5/12 md:w-6/12 sm:w-6/12 absolute text-white bg-black p-12 my-32 mx-auto right-0 left-0 opacity-85 rounded-md "
       >
         <h1 className="py-4 font-semibold text-4xl ">
           {isLogin ? "Sign In" : "Sign Up"}
