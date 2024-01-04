@@ -1,36 +1,60 @@
-import { signOut } from "firebase/auth";
-import React from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
+import { LOGO_URL } from "../utils/constant";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+
+      return () => unsubscribe();
+    });
+  }, []);
+
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         navigate("/error");
       });
   };
   return (
     <div className="absolute flex justify-between w-screen  px-4 py-2 bg-gradient-to-b from-black z-30 ">
-      <img
-        className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="logo"
-      />
+      <img className="w-44" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="">
-          <img
-            className="w-10 my-1 flex rounded-md"
-            src={user?.photoURL}
-            alt="userIcon"
-          />
-          <button onClick={handleSignOut}>(Sign Out)</button>
+          <div className="flex">
+            <img
+              className="w-12 m-4  rounded-md"
+              src={user?.photoURL}
+              alt="userIcon"
+            />
+            <h2 className="my-6" >{user.displayName}</h2>
+            <button className="p-2 m-2" onClick={handleSignOut}>
+              (Sign Out)
+            </button>
+          </div>
         </div>
       )}
     </div>
