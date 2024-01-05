@@ -46,11 +46,11 @@ const Header = () => {
         <div className="">
           <div className="flex">
             <img
-              className="w-12 m-4  rounded-md"
+              className="w-12 m-4 rounded-md"
               src={user?.photoURL}
               alt="userIcon"
             />
-            <h2 className="my-6" >{user.displayName}</h2>
+            <h2 className="my-7" >{user.displayName}</h2>
             <button className="p-2 m-2" onClick={handleSignOut}>
               (Sign Out)
             </button>

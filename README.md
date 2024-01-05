@@ -28,11 +28,14 @@
 
  - Browse(after Authentication)
       - Header 
-      - Main Movie
+      - MainContainer
         - Trailer in Background
         - Title & Description
-        - Movie Suggestion
+        
+     -  SecondaryContainer(Movie Suggestion)
            - MovieLists * n
+             - Cards * n
+
 
 - NetflixGPt 
       - Search Bar
