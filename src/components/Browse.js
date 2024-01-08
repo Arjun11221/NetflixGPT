@@ -7,18 +7,21 @@ import usePopular from "../hooks/usePopular";
 import useTop from "../hooks/useTop";
 import useTvShows from "../hooks/useTvShow";
 import useAction from "../hooks/useAction";
+import Footer from "./Footer";
 const Browse = () => {
  
   useMoviesList();
   usePopular();
   useTop();
   useTvShows();
-  useAction()
+  useAction();
   return (
     <div>
       <Header />
       <MainContainer/>
       <SecondaryContainer/>
+      <hr className=""/>
+      <Footer/>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO_URL } from "../utils/constant";
@@ -40,8 +40,8 @@ const Header = () => {
       });
   };
   return (
-    <div className="absolute text-white flex justify-between w-screen  px-4 py-2 bg-gradient-to-b from-black z-30 ">
-      <img className="w-44" src={LOGO_URL} alt="logo" />
+    <div className="absolute text-white flex justify-between w-screen px-5 py-4 bg-gradient-to-b from-black z-30 ">
+      <Link to="/" ><img className="w-44" src={LOGO_URL} alt="logo" /></Link>
       {user && (
         <div className="">
           <div className="flex">
