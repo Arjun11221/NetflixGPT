@@ -1,12 +1,11 @@
 import React from 'react'
 import { IMG_CDN_URL } from '../utils/constant'
 
-const MovieCard = ({ key }) => { 
-  console.log(key);
+const MovieCard = ({ posterPath }) => { 
+  // console.log(key);
   return (
-    <div>
-        {/* <img src={IMG_CDN_URL + posterPath} alt='Movie Card' /> */}
-        <h1>{key}</h1>
+    <div className='w-48 pr-4' >
+        <img src={IMG_CDN_URL + posterPath} alt='Movie Card' />
     </div>
   )
 }
