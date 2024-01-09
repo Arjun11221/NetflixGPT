@@ -7,21 +7,23 @@ import usePopular from "../hooks/usePopular";
 import useTop from "../hooks/useTop";
 import useTvShows from "../hooks/useTvShow";
 import useAction from "../hooks/useAction";
-import Footer from "./Footer";
+import GptSearch from "./GptSearch";
+// import { useSelector } from "react-redux";
 const Browse = () => {
- 
+  // const gptSearch = useSelector((store) => store.gpt.showGptSearch);
+
   useMoviesList();
   usePopular();
   useTop();
   useTvShows();
   useAction();
+
   return (
     <div>
       <Header />
-      <MainContainer/>
-      <SecondaryContainer/>
-      <hr className=""/>
-      <Footer/>
+      <GptSearch />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };
