@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute text-white flex justify-between w-screen px-5 py-4 bg-gradient-to-b from-black z-20 ">
+    <div className="absolute text-white flex justify-between w-full px-5 py-4 bg-gradient-to-b from-black z-20 ">
       <Link to="/">
         <img className="w-44" src={LOGO_URL} alt="logo" />
       </Link>
