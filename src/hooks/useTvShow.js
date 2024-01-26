@@ -5,7 +5,8 @@ import { useEffect } from "react";
 
 const useTvShows = () => {
   const dispatch = useDispatch();
-  const tvShows = useSelector((store) => store.movies.tvShows);
+  const tvShows = useSelector(store=>store.movies.tvShows);
+
   const moviesList = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
@@ -17,7 +18,7 @@ const useTvShows = () => {
   };
 
   useEffect(() => {
-    !tvShows && moviesList();
+  !tvShows && moviesList();
   }, []);
 };
 

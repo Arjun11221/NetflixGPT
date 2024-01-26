@@ -17,7 +17,7 @@ const useAction = ()=>{
     };
   
     useEffect(() => {
-      !actionMovies && moviesList();
+     !actionMovies && moviesList();
     }, []);
 }
 
