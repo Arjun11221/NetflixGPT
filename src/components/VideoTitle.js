@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const VideoTitle = ({ title, overview }) => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-  
+
   return (
     <div className="pt-52 px-20  h-full absolute  text-neutral-50  ">
       <h1 className="text-5xl font-bold  ">{title}</h1>
