@@ -42,20 +42,20 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute text-white flex justify-between w-full px-5 py-4 bg-gradient-to-b from-black z-20 ">
+    <div className="absolute text-white flex justify-between w-full px-5 py-4 bg-gradient-to-b from-black z-20 md:flex-row ">
       <Link to="/">
-        <img className="w-44" src={LOGO_URL} alt="logo" />
+        <img className="w-32 mt-2 md:w-44" src={LOGO_URL} alt="logo" />
       </Link>
       {user && (
-        <div className="flex">
+        <div className="">
           <div className="flex">
             <img
-              className="w-12 m-4 rounded-md"
+              className=" hidden md:block w-12 m-4 rounded-md"
               src={user?.photoURL}
               alt="userIcon"
             />
-            <h2 className="my-7 font-semibold">{user.displayName}</h2>
-            <button className="p-2 m-2 font-semibold" onClick={handleSignOut}>
+            <h2 className="my-5 md:my-7 md:font-semibold">{user.displayName}</h2>
+            <button className="p-2 m-2 md:font-semibold" onClick={handleSignOut}>
               Sign Out
             </button>
           </div>

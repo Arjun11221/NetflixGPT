@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 const Movie = () => {
     const params = useParams();
-    console.log(params.id);
+    // console.log(params.id);
   return (
     <div className="w-screen">
     <iframe
@@ -12,6 +12,7 @@ const Movie = () => {
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
+      
     ></iframe>
   </div>
   )
