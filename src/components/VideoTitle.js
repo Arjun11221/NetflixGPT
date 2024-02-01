@@ -11,7 +11,7 @@ const VideoTitle = ({ title, overview }) => {
       <div className="flex  md:gap-4 my-3">
         <a
           className="bg-white text-black bg-opacity-80 py-1 px-2 md:p-3 md:px-10 font-medium md:text-xl md:font-semibold rounded-md hover:bg-opacity-60 "
-          href={"/movie/" + movies[1]?.id}
+          href={"/movie/" + movies[0]?.id}
         >
           Play
         </a>

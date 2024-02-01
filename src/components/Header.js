@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
@@ -54,8 +55,13 @@ const Header = () => {
               src={user?.photoURL}
               alt="userIcon"
             />
-            <h2 className="my-5 md:my-7 md:font-semibold">{user.displayName}</h2>
-            <button className="p-2 m-2 md:font-semibold" onClick={handleSignOut}>
+            <h2 className="my-5 md:my-7 md:font-semibold">
+              {user.displayName}
+            </h2>
+            <button
+              className="p-2 m-2 md:font-semibold"
+              onClick={handleSignOut}
+            >
               Sign Out
             </button>
           </div>

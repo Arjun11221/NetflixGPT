@@ -9,7 +9,6 @@ import useTvShows from "../hooks/useTvShow";
 import useAction from "../hooks/useAction";
 
 const Browse = () => {
-
   useMoviesList();
   usePopular();
   useTop();
