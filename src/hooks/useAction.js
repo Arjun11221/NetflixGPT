@@ -9,6 +9,7 @@ const useAction = () => {
   const actionMovies = useSelector((store) => store.movies.actionMovies);
 
   const moviesList = async () => {
+    
     try {
       const data = await fetch(
         "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",

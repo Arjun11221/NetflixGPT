@@ -13,7 +13,7 @@ const Movie = () => {
       allowFullScreen  
     ></iframe>
   </div>
-  )
+  );
 }
 
 export default Movie

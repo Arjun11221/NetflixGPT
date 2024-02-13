@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <div className="absolute text-white flex justify-between w-full px-5 py-4 bg-gradient-to-b from-black z-20 md:flex-row ">
       <Link to="/">
-        <img className="w-32 mt-2 md:w-44" src={LOGO_URL} alt="logo" />
+        <img className="w-44 mt-2" src={LOGO_URL} alt="logo" />
       </Link>
       {user && (
         <div className="">
