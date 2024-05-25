@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const VideoTitle = ({ title, overview }) => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
@@ -11,13 +12,13 @@ const VideoTitle = ({ title, overview }) => {
       <div className="flex  md:gap-4 my-3">
         <a
           className="bg-white text-black bg-opacity-80 py-1 px-2 md:p-3 md:px-10 font-medium md:text-xl md:font-semibold rounded-md hover:bg-opacity-60 "
-          href={"/movie/" + movies[5]?.id}
+          href={"/movie/" + movies[0]?.id}
         >
           Play
         </a>
-        <button className="bg-black hidden md:inline-block text-white bg-opacity-80 p-3 px-5  text-xl font-semibold rounded-md hover:bg-opacity-100  ">
+        <Link className="bg-black hidden md:inline-block text-white bg-opacity-80 p-3 px-5  text-xl font-semibold rounded-md hover:bg-opacity-100  ">
           More Info
-        </button>
+        </Link>
       </div>
     </div>
   );

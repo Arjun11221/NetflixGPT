@@ -40,4 +40,5 @@ export const {
   addTvShows,
   addActionMovies,
 } = movieSlice.actions;
+
 export default movieSlice.reducer;
